@@ -25,4 +25,10 @@ object pepita {
 		energia -= self.energiaParaVolar(position.distance(nuevaPosicion))
 		self.position(nuevaPosicion)
 	}	
+	
+	method volarYComer(comida) {
+		position = comida.position()
+		self.come(comida)
+		comida.eliminarDelTablero()
+	}
 }

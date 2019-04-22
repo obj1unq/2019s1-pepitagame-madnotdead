@@ -12,8 +12,8 @@ program PepitaGame {
 	game.ground("suelo.png")
 
 //	VISUALES
-	game.addVisualIn(alpiste, game.at(5,5))
-	game.addVisualIn(manzana, game.at(5,1))
+	game.addVisual(alpiste)
+	game.addVisual(manzana)
 	game.addVisual(buenosAires)
 	game.addVisual(villaGesell)
 	game.addVisual(pepita)
@@ -28,6 +28,9 @@ program PepitaGame {
 	keyboard.down().onPressDo { pepita.move(pepita.position().down(1)) }
 	keyboard.left().onPressDo { pepita.move(pepita.position().left(1)) }
 	keyboard.right().onPressDo { pepita.move(pepita.position().right(1)) }
+	
+	keyboard.a().onPressDo { pepita.volarYComer(alpiste) }
+	keyboard.m().onPressDo { pepita.volarYComer(manzana) }
 		
 //	START
 	game.start()
