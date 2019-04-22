@@ -17,6 +17,15 @@ program PepitaGame {
 	game.addVisual(buenosAires)
 	game.addVisual(villaGesell)
 	game.addVisual(pepita)
+	game.addVisual(pepona)
+	game.addVisual(pipa)
+	
+// COLISIONES
+//OPCION 1
+	game.whenCollideDo(pepita, { ave => pepita.nuevaAmiga(ave)})
+//OPCION 2
+	game.whenCollideDo(pepona, { ave => pepita.nuevaAmiga(pepona)})
+	game.whenCollideDo(pipa, { ave => pepita.nuevaAmiga(pipa)})
 
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }
